@@ -1,0 +1,32 @@
+{
+  "name": "deisy-app-back",
+  "version": "1.0.0",
+  "description": "Back-End Deisy App",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/index.js --exec babel-node"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lucas9704/deisy-app-back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lucas9704/deisy-app-back/issues"
+  },
+  "homepage": "https://github.com/Lucas9704/deisy-app-back#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.6"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.18.9",
+    "@babel/core": "^7.18.9",
+    "@babel/node": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "nodemon": "^2.0.19"
+  }
+}
