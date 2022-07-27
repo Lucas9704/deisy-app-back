@@ -1,0 +1,16 @@
+###
+POST http://localhost:3000/api/v1/posts
+content-type: application/json
+
+{
+    "title": "My first post 2",
+    "content": "This is my first post",
+    "description": "This is my first post",
+    "image_url": "http://www.google.com"
+}
+
+###
+GET http://localhost:3000/api/v1/posts/
+
+###
+GET http://localhost:3000/api/v1/posts/1
