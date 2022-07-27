@@ -3,16 +3,18 @@ import Post from "../models/Posts";
 const getPosts = async (req, res) => {
 	console.log("GET ALL /api/v1/posts");
 
-	await Post.find({}, (err, posts) => {
-		if (err)
-			return res
-				.status(500)
-				.send({ message: `Error al realizar la peticion: ${err}` });
-		if (!posts)
-			return res.status(404).send({ message: "NO existen posts." });
+	try {
+		const posts = await Post.find();
+
+		if (!posts) {
+			return res.status(404).send({ message: "No existen posts." });
+		}
 
 		res.status(200).send({ posts });
-	});
+	}
+	catch (err) {
+		res.status(500).send({ message: `Error al realizar la peticion: ${err}` });
+	}
 }
 
 const getPost = async (req, res) => {

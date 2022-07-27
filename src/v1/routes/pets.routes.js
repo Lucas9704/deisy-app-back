@@ -1,17 +1,18 @@
 import { Router } from "express";
-import Pets from "../../models/Pets";
+import * as petsCtrl from "../../controllers/pets.controller";
 
 const router = Router();
 
-router.get("/pets", (req, res) => {
-	res.send("pets");
-});
-
-router.post("/pets", async (req, res) => {
-	const newPets = new Pets(req.body);
-	await newPets.save();
-	console.log(newPets);
-	res.json("saving a new pet");
-});
+router
+	// GET ALL
+	.get("/pets", petsCtrl.getPets)
+	// GET by id
+	.get('/pets/:id', petsCtrl.getPet)
+	// POST NEW
+	.post("/pets", petsCtrl.addPet)
+	// PUT by id
+	.patch('/pets/:id', petsCtrl.updatePet)
+	// DELETE by id
+	.delete('/pets/:id', petsCtrl.deletePet);
 
 export default router;

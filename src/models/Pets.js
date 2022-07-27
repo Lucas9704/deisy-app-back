@@ -36,7 +36,7 @@ const petsSchema = new Schema({
     },
 }, {
     versionKey: false,
-    timestamp: true,
+    timestamps: true,
 });
 
 export default model("Pets", petsSchema);
