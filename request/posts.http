@@ -14,3 +14,17 @@ GET http://localhost:3000/api/v1/posts/
 
 ###
 GET http://localhost:3000/api/v1/posts/1
+
+###
+PUT http://localhost:3000/api/v1/posts/1
+content-type: application/json
+
+{
+    "title": "My first post 1",
+    "content": "This is my first post",
+    "description": "This is my first post",
+    "image_url": "http://www.google.com"
+}
+
+####
+DELETE http://localhost:3000/api/v1/posts/1

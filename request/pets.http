@@ -1,12 +1,10 @@
 GET http://localhost:3000
 
 ###
-
-GET http://localhost:3000/api/v1/
-
+GET http://localhost:3000/api/v1/pets/
 
 ###
-GET http://localhost:3000/api/v1/pets/
+GET http://localhost:3000/api/v1/pets/1
 
 ###
 POST http://localhost:3000/api/v1/pets/
@@ -21,3 +19,20 @@ Content-Type: application/json
     "adoption_status": true,
     "approximate_ubication": "Mexico"
 }
+
+####
+PUT http://localhost:3000/api/v1/pets/1
+Content-Type: application/json
+
+{
+    "name": "Fluff",
+    "type": "dog",
+    "description": "Fluffy is a dog",
+    "approximate_age": 4,
+    "image_url": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
+    "adoption_status": true,
+    "approximate_ubication": "Mexico"
+}
+
+###
+DELETE http://localhost:3000/api/v1/pets/1
