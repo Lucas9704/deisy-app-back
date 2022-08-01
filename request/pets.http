@@ -11,27 +11,27 @@ POST http://localhost:3000/api/v1/pets/
 Content-Type: application/json
 
 {
-    "name": "Fluff",
-    "type": "cat",
-    "description": "Fluffy is a cat",
-    "approximate_age": 4,
-    "image_url": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
-    "adoption_status": true,
-    "approximate_ubication": "Mexico"
+    "name": "Deisy",
+    "type": "Dog",
+    "description": "Fluffy is a Dog",
+    "approximate_age": 13,
+    "image_url": "https://lh3.google.com/pw/AL9nZEUat2Or5Ne1i2n04TMA6s-2I_E_14OLz84PonHQ_67MqFVFsqtHrBuy7PRUohvzLC4Va9RXYWWHg3YAVkbiVXkZaSo_YiM=w471-h627-no?authuser=0",
+    "adoption_status": false,
+    "approximate_ubication": "General Paz y Maipu"
 }
 
 ####
-PUT http://localhost:3000/api/v1/pets/1
+PUT http://localhost:3000/api/v1/pets/
 Content-Type: application/json
 
 {
-    "name": "Fluff",
+    "name": "Fluffy",
     "type": "dog",
     "description": "Fluffy is a dog",
     "approximate_age": 4,
     "image_url": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60",
     "adoption_status": true,
-    "approximate_ubication": "Mexico"
+    "approximate_ubication": "General Paz y Maipu"
 }
 
 ###
