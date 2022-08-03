@@ -11,10 +11,7 @@ const app = express();
 app.set("port", process.env.PORT || 3000);
 
 //middlewares
-const corsOptions = {
-    origin: "http://localhost:4200"
-}
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));

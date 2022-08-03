@@ -21,7 +21,7 @@ Content-Type: application/json
 }
 
 ####
-PUT http://localhost:3000/api/v1/pets/
+PUT http://localhost:3000/api/v1/pets/62e1a0432add3494543b7566
 Content-Type: application/json
 
 {
@@ -36,3 +36,11 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/api/v1/pets/1
+
+PUT http://localhost:3000/api/v1/pets/62e1a0432add3494543b7566
+Content-Type: application/json
+
+{
+    "adoption_status": true,
+    "approximate_ubication": "General Paz y Maipu"
+}
