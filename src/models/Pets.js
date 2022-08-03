@@ -3,6 +3,11 @@ import mongoosePaginate from "mongoose-paginate-v2";
 
 const petsSchema = new Schema(
 	{
+		id: {
+			type: Number,
+			required: true,
+			unique: true,
+		},
 		name: {
 			type: String,
 			required: true,

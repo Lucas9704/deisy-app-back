@@ -11,13 +11,15 @@ POST http://localhost:3000/api/v1/pets/
 Content-Type: application/json
 
 {
-    "name": "Deisy",
+    "id"= 1,
+    "name": "Moria",
     "type": "Dog",
-    "description": "Fluffy is a Dog",
-    "approximate_age": 13,
-    "image_url": "https://lh3.google.com/pw/AL9nZEUat2Or5Ne1i2n04TMA6s-2I_E_14OLz84PonHQ_67MqFVFsqtHrBuy7PRUohvzLC4Va9RXYWWHg3YAVkbiVXkZaSo_YiM=w471-h627-no?authuser=0",
+    "gender": "Female",
+    "description": "is a Dog",
+    "approximate_age": 5,
+    "image_url": "https://images.dog.ceo/breeds/vizsla/n02100583_12413.jpg",
     "adoption_status": false,
-    "approximate_ubication": "General Paz y Maipu"
+    "approximate_ubication": "Moreno y Las Heras"
 }
 
 ####
