@@ -7,13 +7,13 @@ const getPets = async (req, res) => {
 	try {
 		const { page, size, name} = req.query;
 
-		const conditionName = name ? { 
+		const condition = name ? { 
 			name: { $regex: new RegExp(name), $options: "i" }
 		} : {};
 
 		const {limit, offset} = getPagination(page, size);
 
-		const data = await Pet.paginate( conditionName ,{ offset,limit });
+		const data = await Pet.paginate(  condition  ,{ offset,limit });
 
 		if (!data) {
 			return res.status(404).send({ message: "No existen pets." });
@@ -98,53 +98,30 @@ const deletePet = async (req, res) => {
 	}
 };
 
-const getPetsByType = async (req, res) => {
-	console.log("GET BY TYPE /api/v1/pets/type/:type");
-	let type = req.params.type;
-
-	try {
-		const pets = await Pet.find({ type: type });
-
-		if (!pets) {
-			return res.status(404).send({ message: "No existen pets." });
-		}
-
-		res.status(200).send({ pets });
-	} catch (err) {
-		res.status(500).send({ message: `Error al realizar la peticion: ${err}` });
-	}
-};
-
-const getPetsByGender = async (req, res) => {
-	console.log("GET BY Gender /api/v1/pets/gender/:gender");
-	let gender = req.params.gender;
-
-	try {
-		const pets = await Pet.find({ gender: gender });
-
-		if (!pets) {
-			return res.status(404).send({ message: "No pets found." });
-		}
-
-		res.status(200).send({ pets });
-	} catch (err) {
-		return res
-			.status(500)
-			.send({ message: `Error al realizar la peticion: ${err}` });
-	}
-};
-
 const getPetsAdoptable = async (req, res) => {
 	console.log("GET ADOPTABLE /api/v1/pets/adoption");
 
 	try {
-		const pets = await Pet.find({ adoption_status: false });
+		const { page, size, adoption} = req.query;
 
-		if (!pets) {
-			return res.status(404).send({ message: "No pets found." });
+		const condition = adoption ? {
+			adoption_status: adoption
+		} : {};
+
+		const {limit, offset} = getPagination(page, size);
+
+		const data = await Pet.paginate(  condition  ,{ offset,limit });
+
+		if (!data) {
+			return res.status(404).send({ message: "No existen pets." });
 		}
 
-		res.status(200).send({ pets });
+		res.status(200).send({ 
+			data: data.docs,
+			totalItems: data.totalDocs,
+			totalPages: data.totalPages,
+			currentPage: data.page - 1,
+		});
 	} catch (err) {
 		return res
 			.status(500)
@@ -158,7 +135,5 @@ export {
 	addPet,
 	updatePet,
 	deletePet,
-	getPetsByType,
-	getPetsByGender,
-	getPetsAdoptable,
+	getPetsAdoptable
 };

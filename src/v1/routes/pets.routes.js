@@ -16,9 +16,5 @@ router
 	.put('/pets/:id', petsCtrl.updatePet)
 	// DELETE by id
 	.delete('/pets/:id', petsCtrl.deletePet)
-	// GET by type
-	.get('/pets/type/:type', petsCtrl.getPetsByType)
-	// GET by gender
-	.get('/pets/gender/:gender', petsCtrl.getPetsByGender);
 
 export default router;

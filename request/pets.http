@@ -1,7 +1,7 @@
 GET http://localhost:3000
 
 ###
-GET http://localhost:3000/api/v1/pets/
+GET http://localhost:3000/api/v1/pets/adoption?adoption=true
 
 ###
 GET http://localhost:3000/api/v1/pets/1
