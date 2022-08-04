@@ -32,6 +32,7 @@ const petsSchema = new Schema(
 		image_url: {
 			type: String,
 			required: true,
+			trim: true,
 		},
 		adoption_status: {
 			type: Boolean,
@@ -42,7 +43,7 @@ const petsSchema = new Schema(
 			type: Date,
 			default: Date.now,
 		},
-		approximate_ubication: {
+		approximate_location: {
 			type: String,
 			required: true,
 		},

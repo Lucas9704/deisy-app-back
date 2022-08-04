@@ -1,5 +1,6 @@
 import Pet from "../models/Pets";
 import { getPagination } from "../libs/getPagination";
+import { get } from "mongoose";
 
 const getPets = async (req, res) => {
 	console.log("GET ALL /api/v1/pets");
@@ -50,8 +51,19 @@ const getPet = async (req, res) => {
 const addPet = async (req, res) => {
 	console.log("POST /api/v1/posts");
 	console.log(req.body);
+	const id = await Pet.countDocuments();
 
-	let pet = new Pet(req.body);
+	let pet = new Pet({
+		id: id + 10,
+		name: req.body.name,
+		type: req.body.type,
+		gender: req.body.gender,
+		description: req.body.description,
+		approximate_age: req.body.approximate_age,
+		image_url: req.body.image_url,
+		adoption_status: req.body.adoption_status,
+		approximate_location: req.body.approximate_location
+	});
 
 	try {
 		await pet.save();
