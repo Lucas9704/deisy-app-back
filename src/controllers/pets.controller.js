@@ -54,7 +54,7 @@ const addPet = async (req, res) => {
 	const id = await Pet.countDocuments();
 
 	let pet = new Pet({
-		id: id + 10,
+		id: id + 15,
 		name: req.body.name,
 		type: req.body.type,
 		gender: req.body.gender,
